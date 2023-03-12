@@ -1,18 +1,120 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".view.MainActivity">
 
     <TextView
-        android:layout_width="wrap_content"
+        android:id="@+id/textview_label1"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_marginTop="20dp"
+        android:textAlignment="center"
+        android:textColor="#FF0178"
+        android:textStyle="bold"
+        android:textSize="30sp"
+        android:text="Calculadora"/>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <Button
+        android:id="@+id/button_receber_bonus"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:backgroundTint="#F485B9"
+        android:text="@string/bonus_rodada"
+        android:textColor="@color/black"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/edittext_cartao_payer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_weight="1"
+            android:inputType="numberDecimal"
+            android:textAlignment="center"
+            android:hint="@string/cartao_payer"
+            android:textColorHint="#FF0178"/>
+        <EditText
+            android:id="@+id/edittext_cartao_receiver"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_weight="1"
+            android:inputType="numberDecimal"
+            android:textAlignment="center"
+            android:hint="@string/cartao_receiver"
+            android:textColorHint="#FF0178"/>
+
+    </LinearLayout>
+
+    <EditText
+        android:id="@+id/edittext_valor"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:inputType="numberDecimal"
+        android:textAlignment="center"
+        android:hint="@string/valor_banco"
+        android:textColorHint="#FF0178"/>
+
+    <Button
+        android:id="@+id/button_realizar_transferencia_cartoes"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:backgroundTint="#F485B9"
+        android:text="@string/realizar_transferencia"
+        android:textColor="@color/black"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="40dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/button_pagar_ao_banco"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_weight="1"
+            android:backgroundTint="#F485B9"
+            android:text="@string/pagar_ao_banco"
+            android:textColor="@color/black"/>
+
+        <Button
+            android:id="@+id/button_receber_do_banco"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_weight="1"
+            android:backgroundTint="#F485B9"
+            android:text="@string/receber_do_banco"
+            android:textColor="@color/black"/>
+
+    </LinearLayout>
+
+
+
+</LinearLayout>

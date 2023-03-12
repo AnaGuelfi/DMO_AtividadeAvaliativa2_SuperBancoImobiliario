@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">SuperBancoImobiliarioDMO</string>
+    <string name="valor_banco">Valor para Transferência</string>
+    <string name="pagar_ao_banco">Pagar ao Banco</string>
+    <string name="receber_do_banco">Receber do Banco</string>
+    <string name="bonus_rodada">Receber Bônus por Rodada Finalizada</string>
+    <string name="cartao_payer">Cartão Payer</string>
+    <string name="cartao_receiver">Cartão Receiver</string>
+    <string name="realizar_transferencia">Realizar Transferência entre Cartões</string>
 </resources>
