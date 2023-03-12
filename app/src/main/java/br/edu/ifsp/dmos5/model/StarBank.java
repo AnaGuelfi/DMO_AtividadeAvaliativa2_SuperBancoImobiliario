@@ -14,14 +14,17 @@ public class StarBank {
         return instance;
     }
 
-    /* Operação inicializa os 6 cartões possíveis do jogo*/
+    /* Operação inicializa os 6 cartões possíveis do jogo
+    * Alterei a estrutura indicada pelo diagrama para que ficar adequada à implementação que escolhi
+    * Como os cards são inicializados como construtores na Main, este método ficou sem sentido,
+    * então utilizei para inicializar os cards com o valor inicial padrão*/
     public void startCreditCards(CreditCard card){
         card.setBalance(15000);
     }
 
     /* A cada rodada, o cartão recebe uma recompensa*/
     public void roundCompleted(CreditCard card, double value){
-        card.setBalance(card.getBalance() + value); // 500 é um valor provisório para recompensa de final da rodada
+        card.setBalance(card.getBalance() + value);
     }
 
     /*

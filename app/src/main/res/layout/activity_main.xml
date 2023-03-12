@@ -59,7 +59,6 @@
             android:textAlignment="center"
             android:hint="@string/cartao_receiver"
             android:textColorHint="#FF0178"/>
-
     </LinearLayout>
 
     <EditText

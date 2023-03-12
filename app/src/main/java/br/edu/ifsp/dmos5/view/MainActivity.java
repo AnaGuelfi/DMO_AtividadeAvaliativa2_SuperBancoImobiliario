@@ -86,21 +86,25 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     public void startSuperBancoImobiliario() {
+        // Adicionando cards em um ArrayList para facilitar as buscas por IDs posteriormente
         cards.add(card1);
         cards.add(card2);
         cards.add(card3);
         cards.add(card4);
         cards.add(card5);
         cards.add(card6);
+        // Inicializando cards
         initCards();
     }
 
+    // Inicializando todos os cards do Arraylist, para que recebam o valor inicial padrão
     private void initCards(){
         for(CreditCard c : cards){
             StarBank.getInstance().startCreditCards(c);
         }
     }
 
+    // Como o usuário digita um ID, é necessário verificar qual card corresponde ao ID digitado. Por isso Arraylist. Este método percorre o ArrayList para obter um cartão com o ID informado
     public CreditCard getCard(int cardCalculadora){
         for(CreditCard c : cards){
             if(c.getId() == cardCalculadora){
@@ -110,6 +114,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         return null;
     }
 
+    // Transformando o ID digitado em forma de String para um ID inteiro e facilitar as operações
     public int getCardId(EditText editCard){
         int cardId;
         String cardText;
@@ -125,6 +130,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         return cardId;
     }
 
+    // Casting para o valor para as transferências
     private double getValue() {
         double valorDigitado;
         String valorString;
@@ -140,6 +146,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         return valorDigitado;
     }
 
+    // Bônus ao finalizar a rodada
     public void sendBonus(){
         int cardBonus = getCardId(cartaoBonusEditText);
         double bonus = getValue();
@@ -147,6 +154,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         resultadoTextView.setText(String.format("Cartão: %d - Saldo final: %.2f", getCard(cardBonus).getId(), getCard(cardBonus).getBalance()));
     }
 
+    // Pagamento para o banco
     public void payBank() throws InsufficientBalance {
         int cardPayer = getCardId(cartaoPayerEditText);
         double valuePay = getValue();
@@ -154,6 +162,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         resultadoTextView.setText(String.format("Cartão: %d - Saldo final: %.2f", getCard(cardPayer).getId(), getCard(cardPayer).getBalance()));
     }
 
+    // Receber valor do banco
     public void receiveBank(){
         int cardReceiver = getCardId(cartaoReceiverEditText);
         double valueReceive = getValue();
@@ -161,12 +170,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         resultadoTextView.setText(String.format("Cartão: %d - Saldo final: %.2f", getCard(cardReceiver).getId(), getCard(cardReceiver).getBalance()));
     }
 
+    // Transferências entre os cards/jogadores
     public void transferCards(){
         int cardPayer = getCardId(cartaoPayerEditText);
         int cardReceiver = getCardId(cartaoReceiverEditText);
         double valueTransfer = getValue();
         boolean status;
+
         status = StarBank.getInstance().transfer(getCard(cardPayer), getCard(cardReceiver), valueTransfer);
+
+        // Tratamento para caso a transferência seja inválida.
         if(status){
             resultadoTextView.setText(String.format("Cartão Payer: %d - Saldo final: %.2f \n Cartão Receiver: %d - Saldo final: %.2f", getCard(cardPayer).getId(), getCard(cardPayer).getBalance(), getCard(cardReceiver).getId(), getCard(cardReceiver).getBalance()));
         } else {

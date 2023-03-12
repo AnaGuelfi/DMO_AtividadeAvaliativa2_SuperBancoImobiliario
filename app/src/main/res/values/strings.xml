@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">SuperBancoImobiliarioDMO</string>
+    <string name="app_name">Super Banco Imobiliário</string>
     <string name="valor_banco">Valor para Transferência</string>
     <string name="pagar_ao_banco">Pagar ao Banco</string>
     <string name="receber_do_banco">Receber do Banco</string>

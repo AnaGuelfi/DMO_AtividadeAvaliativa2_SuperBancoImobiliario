@@ -9,6 +9,7 @@ public class CreditCard {
     * Ao instanciar um CreditCard, é atribuido o próximo ID de forma automática, incrementando o valor de LAST_CARD_ID da classe.
     * O valor inicial do saldo de cada CreditCard é de $15000*/
     public CreditCard(){
+        // Atribuir ID
         this.id = LAST_CARD_ID + 1;
         LAST_CARD_ID++;
     }
@@ -31,6 +32,7 @@ public class CreditCard {
         this.setBalance(this.getBalance() + newValue);
     }
 
+    // Exceção para caso o valor a ser debitado seja insuficiente, invalidando a operação
     public void debitValue(double newValue) throws InsufficientBalance {
         if(newValue < this.getBalance()){
             this.setBalance(this.getBalance() - newValue);
