@@ -11,7 +11,6 @@ public class CreditCard {
     public CreditCard(){
         this.id = LAST_CARD_ID + 1;
         LAST_CARD_ID++;
-        this.setBalance(15000);
     }
 
     public int getId() {
@@ -24,8 +23,8 @@ public class CreditCard {
     public double getBalance() {
         return balance;
     }
-    public void setBalance(double balance) {
-        this.balance = balance;
+    public void setBalance(double newBalance) {
+        this.balance = newBalance;
     }
 
     public void creditValue(double newValue){

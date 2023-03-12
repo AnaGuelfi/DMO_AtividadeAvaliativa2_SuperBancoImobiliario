@@ -11,28 +11,27 @@
         android:id="@+id/textview_label1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="5dp"
         android:textAlignment="center"
         android:textColor="#FF0178"
         android:textStyle="bold"
         android:textSize="30sp"
         android:text="Calculadora"/>
 
-    <Button
-        android:id="@+id/button_receber_bonus"
+    <EditText
+        android:id="@+id/edittext_cartaoBonus"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginEnd="10dp"
-        android:backgroundTint="#F485B9"
-        android:text="@string/bonus_rodada"
-        android:textColor="@color/black"/>
+        android:layout_marginTop="5dp"
+        android:inputType="numberDecimal"
+        android:textAlignment="center"
+        android:hint="@string/cartaobonus"
+        android:textColorHint="#FF0178"/>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="5dp"
         android:layout_marginBottom="20dp"
         android:orientation="horizontal">
 
@@ -40,7 +39,7 @@
             android:id="@+id/edittext_cartao_payer"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="5dp"
             android:layout_marginStart="10dp"
             android:layout_marginEnd="10dp"
             android:layout_weight="1"
@@ -52,7 +51,7 @@
             android:id="@+id/edittext_cartao_receiver"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="5dp"
             android:layout_marginStart="10dp"
             android:layout_marginEnd="10dp"
             android:layout_weight="1"
@@ -67,7 +66,7 @@
         android:id="@+id/edittext_valor"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="5dp"
         android:inputType="numberDecimal"
         android:textAlignment="center"
         android:hint="@string/valor_banco"
@@ -77,17 +76,28 @@
         android:id="@+id/button_realizar_transferencia_cartoes"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="5dp"
         android:layout_marginStart="10dp"
         android:layout_marginEnd="10dp"
         android:backgroundTint="#F485B9"
         android:text="@string/realizar_transferencia"
         android:textColor="@color/black"/>
 
+    <Button
+        android:id="@+id/button_receber_bonus"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:backgroundTint="#F485B9"
+        android:text="@string/bonus_rodada"
+        android:textColor="@color/black"/>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="5dp"
         android:layout_marginBottom="40dp"
         android:orientation="horizontal">
 
@@ -112,9 +122,26 @@
             android:backgroundTint="#F485B9"
             android:text="@string/receber_do_banco"
             android:textColor="@color/black"/>
-
     </LinearLayout>
 
-
+    <TextView
+        android:id="@+id/textview_label2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:textAlignment="center"
+        android:textColor="#FF0178"
+        android:textStyle="bold"
+        android:textSize="30sp"
+        android:text="@string/resultado"/>
+    <TextView
+        android:id="@+id/textview_label3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:textAlignment="center"
+        android:textColor="#FF0178"
+        android:textStyle="bold"
+        android:textSize="20sp"/>
 
 </LinearLayout>

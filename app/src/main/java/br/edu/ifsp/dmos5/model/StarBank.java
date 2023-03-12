@@ -1,5 +1,7 @@
 package br.edu.ifsp.dmos5.model;
 
+import java.util.ArrayList;
+
 public class StarBank {
     private static StarBank instance;
 
@@ -11,14 +13,15 @@ public class StarBank {
         }
         return instance;
     }
+
     /* Operação inicializa os 6 cartões possíveis do jogo*/
-    public void startCreditCards(){
-        // TO DO
+    public void startCreditCards(CreditCard card){
+        card.setBalance(15000);
     }
 
     /* A cada rodada, o cartão recebe uma recompensa*/
     public void roundCompleted(CreditCard card, double value){
-        card.setBalance(card.getBalance() + 500); // 500 é um valor provisório para recompensa de final da rodada
+        card.setBalance(card.getBalance() + value); // 500 é um valor provisório para recompensa de final da rodada
     }
 
     /*
